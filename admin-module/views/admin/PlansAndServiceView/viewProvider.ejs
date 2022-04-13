@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JARVISnet</title>
+    <link rel="stylesheet" href="css/maicons.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <link rel="stylesheet" href="vendor/animate/animate.css" />
+
+    <link rel="stylesheet" href="css/theme.css" />
+  </head>
+  <body>
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+
+    <%- include('../../partials/header')-%>
+
+    <div class="page-section">
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">NO.</th>
+              <th scope="col">SERVICE PROVIDER NAME</th>
+              <th scope="col">Broadband Plans</th>
+              <th scope="col" >Cable Plans</th>
+              <th scope="col">DELETE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0;i<sp.length;i++) {%>
+            <tr>
+              <th scope="row"><%=i+1 %></th>
+              <td><%=sp[i].serviceProvider %></td>
+              <td><a href="viewbroadbandPlan/<%= sp[i].serviceProvider %>" class="btn btn-primary">broadband plans</a></td>
+              <td><a href="viewcablePlan/<%= sp[i].serviceProvider %>" class="btn btn-primary">cable plans</a></td>
+              <td><a href="" class="btn btn-dark">delete</a></td>
+            </tr>
+            <%} %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!--footer-->
+
+    <%-include('../../partials/footer.ejs') -%>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/google-maps.js"></script>
+
+    <script src="vendor/wow/wow.min.js"></script>
+
+    <script src="js/theme.js"></script>
+  </body>
+</html>

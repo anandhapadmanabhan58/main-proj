@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JARVISnet</title>
+    <link rel="stylesheet" href="css/maicons.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <link rel="stylesheet" href="vendor/animate/animate.css" />
+
+    <link rel="stylesheet" href="css/theme.css" />
+  </head>
+  <body>
+    <!-- Back to top button -->
+    <div class="back-to-top"></div>
+
+    <%- include('./partials/header')-%>
+
+    <div class="container" style="margin-left: 35%">
+      <% for(var i=0;i<data.length;i++) {%>
+      <div class="box">
+        <div class="col-lg-4 py-3 wow zoomIn">
+          <div class="card-pricing">
+            <div class="header">
+              <div class="pricing-type" style="display: none">Basic</div>
+              <div class="price">
+                <span class="dollar"></span>
+                <h1>
+                  <%=data[i].serviceProvider %><span class="suffix"><br />Plans</span>
+                </h1>
+              </div>
+              <h5 style="display: none">Per Month</h5>
+            </div>
+            <div class="body">
+              <p>Standard Definition <span class="suffix">Support</span></p>
+              <p>HD <span class="suffix">Support</span></p>
+              <p>Full HD <span class="suffix">Support</span></p>
+              <p>4K<span class="suffix">Support</span></p>
+              <p>24/7 <span class="suffix">Service</span></p>
+            </div>
+            <div class="footer">
+              <a href="cablePlans/<%=data[i].serviceProvider%>" class="btn btn-pricing btn-block"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <%} %>
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/google-maps.js"></script>
+
+    <script src="vendor/wow/wow.min.js"></script>
+
+    <script src="js/theme.js"></script>
+  </body>
+</html>
